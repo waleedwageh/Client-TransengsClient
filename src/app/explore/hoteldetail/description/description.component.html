@@ -1,0 +1,147 @@
+<div class="bg_color_1" >
+
+  <section id="hero">
+    <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
+      <h1 class="mb-4 pb-0">The Greatest<br><span>Marketing</span> OutDoors</h1>
+      <p class="mb-4 pb-0">Wishlists curated by Transengs.</p>
+      <a href="#about" class="about-btn scrollto">About The Website</a>
+    </div>
+  </section><!-- End Hero Section -->
+  <nav class="secondary_nav sticky_horizontal">
+    <div class="container">
+      <ul class="clearfix">
+        <li><a href="#description" class="active">Description</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#sidebar">Booking</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container margin_60_35">
+    <div class="row">
+      <div class="col-lg-8">
+        <section id="description">
+          <h2>{{hotelDetail.name}}</h2>
+        <p> {{hotelDetail.description}}</p>
+         <div class="row">
+            <div class="col-lg-6">
+              <ul class="bullets mb-2">
+                <li>The Bedroom count :   {{hotelDetail.bedroom_count}} In Room </li>
+                <li>The Bed count   {{hotelDetail.bed_count}} In Room </li>
+                <li>The bathroom count {{hotelDetail.bathroom_count }} In Room </li>
+                <li> Strat Date Booking {{hotelDetail.start_date}}</li>
+              </ul>
+            </div>
+            <div class="col-lg-6">
+
+              <ul class="bullets">
+                <li>City Name is : {{hotelDetail.cityName}}</li>
+                <li>stateName : {{hotelDetail.stateName}}</li>
+                <li> countryName :{{hotelDetail.countryName}}</li>
+                <li> End_date{{hotelDetail.end_date}}</li>
+              </ul>
+            </div>
+          </div>
+
+
+        </section>
+      </div>
+      <aside class="col-lg-4" id="sidebar">
+        <div class="box_detail booking">
+          <div class="price">
+            <span>{{hotelDetail.price}}$ <small>person</small></span>
+            <!-- <div class="score"><span>Good<em>350 Reviews</em></span><strong></strong></div> -->
+          </div>
+
+           <div class="form-group">
+            <div class="p-field p-col-12 p-md-4">
+              <p-calendar [(ngModel)]="check_in_date" dateFormat="mm-dd-yy" placeholder="Check IN.." inputId="dateformat"></p-calendar>
+          </div>
+          
+          <div class="p-field p-col-12 p-md-4">
+            <p-calendar [(ngModel)]="check_out_date" dateFormat="mm-dd-yy" placeholder="Check Out.." inputId="dateformat"></p-calendar>
+        </div>
+
+
+
+            <!-- <i class="icon_calendar"></i> -->
+            <!-- <h6 class="p-field ">Guest</h6> -->
+              <!-- <p-calendar [(ngModel)]="value" placeholder="When.." class="form-group"></p-calendar> -->
+                <div class="p-field p-col-12 p-md-3">
+                  <label for="minmax-buttons">Guest: Adults-Childern </label>
+                  <p-inputNumber [(ngModel)]="NumberofGuest"  mode="decimal" [showButtons]="true" inputId="minmax-buttons" [min]="0" [max]="10">
+                  </p-inputNumber>
+              </div>
+          </div>
+
+          <div class="form-group clearfix">
+            <!-- <div class="custom-select-form">
+              <select class="wide">
+                <option>Room Type</option>
+                <option>Single Room</option>
+                <option>Double Room</option>
+                <option>Suite Room</option>
+              </select>
+            </div> -->
+          </div>
+          <!-- Click on Modal Button -->
+					<a href="cart-1.html" class=" add_top_30 btn_1 full-width purchase" data-bs-toggle="modal" data-bs-target="#modalForm">Purchase</a>
+
+					<!-- Modal -->
+					<div class="modal fade" id="modalForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="exampleModalLabel">check availability</h5>
+									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+								</div>
+								<div class="modal-body">
+									<form>
+										<div class="mb-3">
+											<label for="cartnmber" class="form-label">Cart Number</label>
+											<input type="text" [(ngModel)]="this.paymentPost.paymentDto.cardNumber" class="form-control" id="cartnmber" name="cartnmber" placeholder="Cart Number" />
+										</div>
+										<div class="mb-3">
+											<label for="month" class="form-label">Month</label>
+											<input type="text" [(ngModel)]="this.paymentPost.paymentDto.month" class="form-control" id="month" name="month" placeholder="Month" />
+										</div>
+										<div class="mb-3">
+											<label for="year" class="form-label">Year</label>
+											<input type="text" [(ngModel)]="this.paymentPost.paymentDto.year" class="form-control" id="year" name="year" placeholder="Year" />
+										</div>
+                    <div class="mb-3">
+											<label for="CVC" class="form-label">CVC</label>
+											<input type="text" [(ngModel)]="this.paymentPost.paymentDto.cvc" class="form-control" id="CVC" name="CVC" placeholder="CVC" />
+										</div>
+										<!-- <div class="mb-3">
+											<label for="reservationdate" class="form-label">reservation date</label>
+											<input type="date" [(ngModel)]="this.paymentPost.paymentDto." class="form-control" id="reservationdate" name="reservationdate" placeholder="Enter reservation date" />
+										</div> -->
+                    <!-- <div class="mb-3">
+                      <p-calendar formControlName="date" showIcon="true" dateFormat="dd.mm.yy" ></p-calendar>
+										</div> -->
+
+										<div class="modal-footer d-block">
+											<p class="float-start">Not yet account <a href="#">Sign Up</a></p>
+											<button type="submit" (click)="Order()"  class="btn btn-success float-end">Order</button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+          <a href="wishlist.html" class="btn_1 full-width outline wishlist"><i class="icon_heart"></i> Add to wishlist</a>
+          <div class="text-center"><small>No money charged in this step</small></div>
+        </div>
+        <!-- <ul class="share-buttons">
+          <li><a class="fb-share" href="#0"><i class="social_facebook"></i> Share</a></li>
+          <li><a class="twitter-share" href="#0"><i class="social_twitter"></i> Tweet</a></li>
+          <li><a class="gplus-share" href="#0"><i class="social_googleplus"></i> Share</a></li>
+        </ul> -->
+      </aside>
+      <hr>
+    </div>
+
+  </div>
+
+</div>

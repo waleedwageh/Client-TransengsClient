@@ -1,0 +1,110 @@
+
+    <!-- ======= explore Section ======= -->
+    <section id="explore">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Explore Nearby</h2>
+          <p>Here are some of our explore</p>
+        </div>
+
+        <div class="row" >
+          <div class="col-lg-4 col-md-6" *ngFor="let item of state">
+            <div class="explore" data-aos="fade-up" [routerLink]="['/exp',item.id]" data-aos-delay="100">
+              <!-- <a routerLink="explore/exp/{{item.id}}">waleed</a> -->
+              <img src="{{item.pictureUrl}}" alt="explore 1" class="img-fluid imgstate">
+              <div class="details">
+                <h3>{{item.name}}</h3>
+                <h3>{{item.countryName}}</h3>
+
+
+                <p>Three Hours Drive</p>
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="col-lg-4 col-md-6">
+            <div class="explore" data-aos="fade-up" [routerLink]="['/exp']" data-aos-delay="200">
+              <img src="assets/img/cities/bridge_autumn_city.jpg" alt="explore 2" class="img-fluid">
+              <div class="details" >
+                <h3>Hungary</h3>
+                <p>Two Hours Drive</p>
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="explore" data-aos="fade-up" [routerLink]="['/exp']" data-aos-delay="300">
+              <img src="assets/img/cities/bridge_night_fog.jpg" alt="explore 3" class="img-fluid">
+              <div class="details">
+                <h3>England</h3>
+                <p>Twenty Hours Drive</p>
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="explore" data-aos="fade-up" [routerLink]="['/exp']" data-aos-delay="100">
+              <img src="assets/img/cities/castle_forest_architecture.jpg" alt="explore 4" class="img-fluid">
+              <div class="details">
+                <h3>Vietnam</h3>
+                <p>Eight Hours Drive</p>
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="explore" data-aos="fade-up" [routerLink]="['/exp']" data-aos-delay="200">
+              <img src="assets/img/cities/city_aerial_view_road.jpg" alt="explore 5" class="img-fluid">
+              <div class="details">
+                <h3>Germany</h3>
+                <p>Two Hours Drive</p>
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="explore" data-aos="fade-up" [routerLink]="['/exp']" data-aos-delay="300">
+              <img src="assets/img/cities/city_evening_snowfall.jpg" alt="explore 6" class="img-fluid">
+              <div class="details">
+                <h3>Canada</h3>
+                <p>Seven Hours Drive</p>
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+
+    </section><!-- End explore Section -->
+
+    

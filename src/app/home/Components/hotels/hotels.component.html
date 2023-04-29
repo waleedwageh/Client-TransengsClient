@@ -1,0 +1,120 @@
+<section id="hotels" class="section-with-bg">
+
+  <div class="container" data-aos="fade-up">
+    <div class="section-header">
+      <h2>Live anywhere</h2>
+      <!-- <p>Her are some nearby hotels</p> -->
+    </div>
+
+    <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="col-lg-4 col-md-6" *ngFor="let item of properityType">
+        <div class="hotel">
+          <div class="hotel-img">
+            <img src="{{item.icon_image}}" [routerLink]="['/exp',item.id]" alt="Hotel 1" class="img-fluid">
+          </div>
+          <h3><a href="#">{{item.name}}</a></h3>
+          <div class="stars">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+          <!-- <p>0.4 Mile from the places</p> -->
+        </div>
+      </div>
+
+      <!-- <div class="col-lg-4 col-md-6">
+        <div class="hotel">
+          <div class="hotel-img">
+            <img src="assets/img/hotels/bora_bora_island_hotels_water_sky.jpg" alt="Hotel 2" class="img-fluid">
+          </div>
+          <h3><a href="#">Hotel 2</a></h3>
+          <div class="stars">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill-half-full"></i>
+          </div>
+          <p>0.5 Mile from the places</p>
+        </div>
+      </div> -->
+
+      <!-- <div class="col-lg-4 col-md-6">
+        <div class="hotel">
+          <div class="hotel-img">
+            <img src="assets/img/hotels/hotel_room_bed_furniture_design_interior.jpg" alt="Hotel 3" class="img-fluid">
+          </div>
+          <h3><a href="#">Hotel 3</a></h3>
+          <div class="stars">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+          <p>0.6 Mile from the places</p>
+        </div>
+      </div> -->
+
+    </div>
+
+    <!-- <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="col-lg-4 col-md-6">
+        <div class="hotel">
+          <div class="hotel-img">
+            <img src="assets/img/hotels/hawaii_hotel_palm_trees_swimming_pool_sea_flowers.jpg" alt="Hotel 1"
+              class="img-fluid">
+          </div>
+          <h3><a href="#">Hotel 1</a></h3>
+          <div class="stars">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+          <p>0.4 Mile from the places</p>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="hotel">
+          <div class="hotel-img">
+            <img src="assets/img/hotels/hotel_mounting_skiing_resort_snow_light.jpg" alt="Hotel 2" class="img-fluid">
+          </div>
+          <h3><a href="#">Hotel 2</a></h3>
+          <div class="stars">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill-half-full"></i>
+          </div>
+          <p>0.5 Mile from the places</p>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="hotel">
+          <div class="hotel-img">
+            <img src="assets/img/hotels/hotel_palm_pool.jpg" alt="Hotel 3" class="img-fluid">
+          </div>
+          <h3><a href="#">Hotel 3</a></h3>
+          <div class="stars">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+          <p>0.6 Mile from the places</p>
+        </div>
+      </div>
+
+    </div> -->
+
+  </div>
+
+</section>

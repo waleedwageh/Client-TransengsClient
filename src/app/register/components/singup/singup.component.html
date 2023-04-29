@@ -1,0 +1,92 @@
+
+
+<!-- ======= Hero Section ======= -->
+<section id="hero">
+  <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
+    <h1 class="mb-4 pb-0">The Greatest<br><span>Marketing</span> OutDoors</h1>
+    <p class="mb-4 pb-0">Wishlists curated by Transengs.</p>
+    <a href="#about" class="about-btn scrollto">About The Website</a>
+  </div>
+</section><!-- End Hero Section -->
+
+<div class="container px-4 py-5 mx-auto">
+  <div class="card card0">
+    <div class="d-flex flex-lg-row flex-column-reverse">
+      <div class="card card1">
+        <div class="row justify-content-center my-auto">
+          <div class="col-md-8 col-10 my-5">
+            <div class="row justify-content-center px-3 mb-3"> <img id="logo" src="assets/img/logo.png"> </div>
+            <h6 class="msg-info">Please sign up for new account</h6>
+    
+            <form #signUp="ngForm" class="login100-form validate-form">
+              <div class="form-group">
+                <label class="form-control-label text-muted">Fullname</label>
+                <input type="text" #f="ngModel" id="text" [(ngModel)]="fullName" name="fullName" placeholder="Full name" class="form-control" required minlength="3">
+                <span class="text-danger px-3" *ngIf="f.invalid&&f.touched">mininum length is 3 char</span>
+                <br>
+                <span class="text-danger px-3" *ngIf="f.errors?.required&&f.touched">Full Name is Reqired</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-control-label text-muted">Email</label>
+                <input type="email" #e="ngModel" id="email" [(ngModel)]="email" name="email" placeholder="Email" class="form-control" required>
+                <span class="text-danger px-3" *ngIf="e.invalid&&e.touched">Email is Reqired</span>
+              </div>
+
+              <!-- <div class="form-group">
+                <label class="form-control-label text-muted">Username</label>
+                <input type="text" #u="ngModel" id="username"   name="username" placeholder="User name" class="form-control">
+                <span class="text-danger px-3" *ngIf="u.invalid&&u.touched">Email is Reqired</span>
+              </div> -->
+
+              <div class="form-group">
+                <label class="form-control-label text-muted">Password</label>
+                <input type="password" (keyup)="IsValidPass()" #p="ngModel" id="psw" [(ngModel)]="password" name="password" placeholder="Password" class="form-control" required>
+                <span class="text-danger px-3" *ngIf="p.invalid&&p.touched">Password is Reqired</span>
+                <span class="text-danger px-3" *ngIf=" this.validatormessage&&p.touched">{{ this.validatormessage}}</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-control-label text-muted">Confirm Password</label>
+                <input type="password" #con="ngModel" [(ngModel)]="conPassword" id="psw" name="psw" placeholder="Confirm Password" class="form-control" required>
+                <span class="text-danger px-3" *ngIf="p.value!=con.value">Password doesn't matched</span>
+                <br>
+                <span class="text-danger px-3" *ngIf="con.invalid&&con.touched"> Reqired</span>
+              </div>
+
+              <div class="row justify-content-center my-3 px-3">
+                <button class="btn-block btn-color" [disabled]="!signUp.valid" (click)="SignUp(signUp)">Sign Up to Transengs</button>
+              </div>
+              
+            </form>
+
+
+          </div>
+        </div>
+        <div class="bottom text-center mb-5">
+          <p href="#" class="sm-text mx-auto mb-3">Already have an account?
+
+            <a routerLink="/login" class="dis-block txt3 hov1 p-r-30 p-t-10 p-b-10 p-l-30      btn btn-white ml-2">
+              Login
+              <i class="fa fa-long-arrow-right m-l-5"></i>
+            </a>
+          </p>
+
+
+
+
+        </div>
+      </div>
+      <div class="card card2">
+        <div class="my-auto mx-md-5 px-md-5 right">
+          <h3 class="text-white">We are more than just a company</h3> <small class="text-white">Transengs was born in
+            2021 when two Hosts welcomed three guests to their San Francisco home, and has since
+            grown to 4 million Hosts who have welcomed more than 900 million guest arrivals in almost every country
+            across the globe. Every day, Hosts offer one-of-a-kind stays and unique
+            Experiences that make it possible for guests to experience the world in a more authentic, connected
+            way.</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

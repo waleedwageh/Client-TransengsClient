@@ -1,0 +1,410 @@
+<!-- ======= Hero Section ======= -->
+<section id="hero">
+    <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
+        <h1 class="mb-4 pb-0">The Greatest<br><span>Marketing</span> OutDoors</h1>
+        <p class="mb-4 pb-0">Wishlists curated by Transengs.</p>
+        <a href="#about" class="about-btn scrollto">About The Website</a>
+    </div>
+</section><!-- End Hero Section -->
+
+
+
+<section id="contact" class="section-bg">
+    <div class="container" data-aos="fade-up">
+        <div class="section-header">
+            <h2>Create a Host</h2>
+            <p>Add Listing</p>
+        </div>
+
+        <form class="row g-3 needs-validation" #form="ngForm" (ngSubmit)="insert(form)" novalidate>
+
+            <div class="col-md-12 col-lg-8">
+                <h1 class="title"><i class="now-ui-icons objects_globe"></i> INFORMATION</h1>
+            </div>
+
+
+            <!-- Row -->
+            <div class="row">
+                <div class="col-sm-6 col-lg-6">
+                    <h3 class="title">Hotel Name</h3>
+                    <div class="form-group">
+                        <input type="text" #name="ngModel" [(ngModel)]="property.propertydto.name"
+                             name="hotelName" placeholder="Hotel" class="form-control" required />
+
+                        <span class="text-danger px-3" *ngIf="name.errors?.required&&name.touched">Hotel Name is
+                            Reqired</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- <p-dropdown [options]="check" [(ngModel)]="property.amenities" optionLabel="name"></p-dropdown> -->
+            <!-- <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name"></p-dropdown> -->
+
+
+
+            <!-- <div class="row">
+                <div class="col-sm-6 col-lg-4">
+                    <h3 class="title">Category</h3>
+                    <div class="form-group">
+                        <input type="text" #category="ngModel" [(ngModel)]="property.category"
+                             value="" placeholder="Category" class="form-control"
+                            required />
+                        <span class="text-danger px-3" *ngIf="category.errors?.required&&category.touched">Category is
+                            Reqired</span>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <h3 class="title">Sub Category</h3>
+                    <div class="form-group">
+                        <input type="text" #subCategory="ngModel" [(ngModel)]="property.subCategory"
+                             value="" placeholder="Sub Category"
+                            class="form-control" required />
+                        <span class="text-danger px-3" *ngIf="subCategory.errors?.required&&subCategory.touched">Sub
+                            Category is Reqired</span>
+                    </div>
+                </div>
+            </div> -->
+
+
+            <!-- <div class="row">
+                <div class="form-group col-md-6">
+                    <h3 class="title" for="propertytype">Property Type</h3>
+                    <select id="propertytype" #propertyType="ngModel" [(ngModel)]="property.propertydto.propertybeName"
+                         class="form-control" required>
+                        <option>Apartment</option>
+                        <option>House</option>
+                        <option>Chalet</option>
+                        <option>Suite</option>
+                        <option>Hotel</option>
+                        <option>Private Bathroom</option>
+                    </select>
+                    <span class="text-danger px-3" *ngIf="propertyType.errors?.required&&propertyType.touched">Property
+                        Type is Reqired</span>
+                </div>
+                <div class="form-group col-md-6">
+                    <h3 class="title" for="roomtype">Room Type</h3>
+                    <select id="roomtype" #roomType="ngModel" [(ngModel)]="property.roomType"
+                         class="form-control" required>
+                        <option>Single</option>
+                        <option>Double</option>
+                        <option>Triple</option>
+                        <option>Quad</option>
+                        <option>Queen</option>
+                        <option>King</option>
+                    </select>
+                    <span class="text-danger px-3" *ngIf="roomType.errors?.required&&roomType.touched">Room Type is
+                        Reqired</span>
+                </div> 
+            </div> -->
+
+<!-- 
+            <div class="row">
+                <div class="col-sm-6 col-lg-6">
+                    <h3 class="title">Number of Guests</h3>
+                    <div class="form-group">
+                        <input type="number" #guests="ngModel" [(ngModel)]="property.guests"
+                             value="" placeholder="Guests" class="form-control"
+                            required />
+                        <span class="text-danger px-3" *ngIf="guests.errors?.required&&guests.touched">Number of Guests
+                            is Reqired</span>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="row">
+                <div class="col-sm-6 col-lg-3">
+                    <h3 class="title">Bedrooms</h3>
+                    <div class="form-group">
+                        <input type="number" #bedroom_Count="ngModel" name="bedroomCount" [(ngModel)]="property.propertydto.bedroom_count"
+                             value="" placeholder="Bedrooms" class="form-control"
+                            required />
+                        <span class="text-danger px-3"
+                            *ngIf="bedroom_Count.errors?.required&&bedroom_Count.touched">Bedrooms is Reqired</span>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <h3 class="title">Beds</h3>
+                    <div class="form-group">
+                        <input type="number" #bed_Count="ngModel" [(ngModel)]="property.propertydto.bed_count"
+                             value="" name="bedCount" placeholder="Beds" class="form-control"
+                            required />
+                        <span class="text-danger px-3" *ngIf="bed_Count.errors?.required&&bed_Count.touched">Beds is
+                            Reqired</span>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <h3 class="title">Bathrooms</h3>
+                    <div class="form-group">
+                        <input type="number" #bathroom_Count="ngModel" [(ngModel)]="property.propertydto.bathroom_count"
+                             value="" name="bathroomCount" placeholder="Bathrooms" class="form-control"
+                            required />
+                        <span class="text-danger px-3"
+                            *ngIf="bathroom_Count.errors?.required&&bathroom_Count.touched">Bathrooms is Reqired</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6 col-lg-3">
+                    <h3 class="title">Accomodates</h3>
+                    <div class="form-group">
+                        <input type="number" #accomodates="ngModel" [(ngModel)]="property.propertydto.accomodates_count"
+                             value="" name="accomodatesCount" placeholder="Accomodates"
+                            class="form-control" required />
+                        <span class="text-danger px-3"
+                            *ngIf="accomodates.errors?.required&&accomodates.touched">Accomodates is Reqired</span>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <h3 class="title">Price</h3>
+                    <div class="form-group">
+                        <input type="number" #price="ngModel" [(ngModel)]="property.propertydto.price"
+                             value="" name="price" placeholder="Price" class="form-control"
+                            required />
+                        <span class="text-danger px-3" *ngIf="price.errors?.required&&price.touched">Price is
+                            Reqired</span>
+                    </div>
+                </div>
+                <div class="form-group col-md-6" >
+                    <h3 class="title" for="typesofplace">Amenities</h3>
+                    <select id="typesofplace" class="form-control" #amenities="ngModel" name="amenities"  (change)="AmenityPost($event.target)" ngModel multiple   required >
+                       
+                       <option *ngFor="let item of check" [ngvalue]="item.id">{{item.name}}</option>
+                       
+                        <!-- <option>Air Conditioning</option>
+                        <option>Heater</option>
+                        <option>Washer</option>
+                        <option>WIFI</option>
+                        <option>Television</option>
+                        <option>Beach Front</option> -->
+                    </select>
+                    <span class="text-danger px-3" *ngIf="amenities.errors?.required&&amenities.touched">Amenities is
+                        Reqired</span>
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-sm-6 col-lg-6">
+                    <h3 class="title">Description</h3>
+                    <div class="form-group">
+                        <textarea class="form-control" #description="ngModel" [(ngModel)]="property.propertydto.description"
+                             placeholder="Description" name="description" required></textarea>
+                        <span class="text-danger px-3"
+                            *ngIf="description.errors?.required&&description.touched">Description is Reqired</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Row -->
+
+            <!-- <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
+                <label for="inputZip">Images</label>
+                <input id="upload" #images="ngModel" [(ngModel)]="property.property_images" 
+                    type="file" (change)="onFileSelected($event);" class="form-control border-0" multiple required>
+                <span class="text-danger px-3" *ngIf="images.errors?.required&&images.touched">Images is Reqired</span>
+                <div class="input-group-append">
+                    <label for="upload" class="btn btn-light m-0 rounded-pill px-4"> <i
+                            class="fa fa-cloud-upload mr-2 text-muted"></i><small
+                            class="text-uppercase font-weight-bold text-muted">Choose file</small></label>
+                </div>
+            </div> -->
+
+
+            <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
+                <label for="inputZip">Images</label>
+                <!-- <input id="upload" #images="ngModel" [(ngModel)]="property.propertyImages" 
+                    type="file" (change)="uploadFile(images.files)"  class="form-control border-0" multiple required>
+                <span class="text-danger px-3" *ngIf="images.errors?.required&&images.touched">Images is Reqired</span>
+                <div class="input-group-append">
+                    <label for="upload" class="btn btn-light m-0 rounded-pill px-4"> <i
+                            class="fa fa-cloud-upload mr-2 text-muted"></i><button click="alert=('hai')"
+                            class="text-uppercase font-weight-bold text-muted">Choose file</button></label>
+                </div> -->
+                <!-- <button type="button" class="btn btn-success " (click)="file.click()">Upload File</button> -->
+            </div>
+            <input type="file" #file placeholder="Choose file" ngModel name="image" (change)="onFileSelected(file.files)"  required >
+
+
+            <div class="col-md-12 col-lg-8">
+                <h1 class="title"><i class="now-ui-icons location_pin"></i> LOCATION</h1>
+            </div>
+
+            <!-- Row -->
+            <div class="row">
+                <div class="col-sm-6 col-lg-6">
+                    <h3 class="title">Country</h3>
+                    <div class="form-group">
+                        <input type="text" #countryName="ngModel" [(ngModel)]="property.state.countryName"
+                             [value]="property.state.countryName" placeholder="Country" name="countryName" class="form-control"
+                            disabled />
+                        <span class="text-danger px-3" *ngIf="countryName.errors?.required&&countryName.touched">Country
+                            is Reqired</span>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-6">
+                    <h3 class="title">State</h3>
+                    <div class="form-group">
+                        <input type="text" #stateName="ngModel" [(ngModel)]="property.state.name"
+                             [value]="property.state.name" name="stateName" placeholder="State" class="form-control"
+                            required />
+                        <span class="text-danger px-3" *ngIf="stateName.errors?.required&&stateName.touched">State is
+                            Reqired</span>
+                    </div>
+                </div>
+            </div>
+<!-- 
+            <div class="row">
+                <div class="col-sm-6 col-lg-6">
+                    <h3 class="title">City</h3>
+                    <div class="form-group">
+                        <input type="text" #cityName="ngModel" [(ngModel)]="property.state."
+                             value="" placeholder="City" class="form-control"
+                            required />
+                        <span class="text-danger px-3" *ngIf="cityName.errors?.required&&cityName.touched">City is
+                            Reqired</span>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-6">
+                    <h3 class="title">Address</h3>
+                    <div class="form-group">
+                        <input type="text" #address="ngModel" [(ngModel)]="property.address"
+                             value="" placeholder="Address" class="form-control"
+                            required />
+                        <span class="text-danger px-3" *ngIf="address.errors?.required&&address.touched">Address is
+                            Reqired</span>
+                    </div>
+                </div>
+            </div> -->
+
+            
+            <!-- <div class="row">
+                <div class="col-sm-12 col-lg-12">
+                    <h3 class="title">Geographic Location</h3>
+                    <div class="col-lg-6 places-map">
+                        <div id="map"  ></div>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13652.05386105063!2d29.9060892!3d31.19264!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x16cbff5d844ff34b!2z2YXYudmH2K8g2KrZg9mG2YjZhNmI2KzZitinINin2YTZhdi52YTZiNmF2KfYqiAtIElUSQ!5e0!3m2!1sar!2seg!4v1624666613285!5m2!1sar!2seg"
+                            width="1000" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe> 
+                    </div>
+                </div>
+            </div> -->
+            <!-- <div class="row">
+                <div class="col-sm-6 col-lg-6">
+                    <h3 class="title">Latitude</h3>
+                    <div class="form-group">
+                        <input type="text" #latitude="ngModel" [(ngModel)]="property.propertydto.latitude"
+                             [value]="lat" placeholder="Latitude" class="form-control"
+                            disabled />
+                        <span class="text-danger px-3" *ngIf="latitude.errors?.required&&latitude.touched">Latitude is
+                            Reqired</span>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-6">
+                    <h3 class="title">Longitude</h3>
+                    <div class="form-group">
+                        <input type="text" #longitude="ngModel" [(ngModel)]="property.propertydto.logitude"
+                             [value]="lng" placeholder="Longitude" class="form-control"
+                            disabled />
+                        <span class="text-danger px-3" *ngIf="longitude.errors?.required&&longitude.touched">Longitude
+                            is Reqired</span>
+                    </div>
+                </div>
+            </div> -->
+
+
+            <!-- Row -->
+
+            <div class="row g-0">
+                <div class="col-lg-12 places-map">
+                  <div id="map"  ></div>
+                  <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13652.05386105063!2d29.9060892!3d31.19264!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x16cbff5d844ff34b!2z2YXYudmH2K8g2KrZg9mG2YjZhNmI2KzZitinINin2YTZhdi52YTZiNmF2KfYqiAtIElUSQ!5e0!3m2!1sar!2seg!4v1624666613285!5m2!1sar!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>           -->
+                </div>
+            </div>
+
+
+            <div class="col-md-12 col-lg-8">
+                <h1 class="title"><i class="now-ui-icons ui-2_time-alarm"></i> OPENING</h1>
+            </div>
+
+            <!-- Row -->
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="title">Start Date</h3>
+                    <div class="datepicker-container">
+                        <!-- <div class="form-group">
+                            <input type="text" #start_Date="ngModel" name="startDate" [(ngModel)]="property.propertydto.start_date"
+                                 class="form-control date-picker"
+                                value="01/01/2020" data-datepicker-color="primary" required>
+                            <span class="text-danger px-3" *ngIf="start_Date.errors?.required&&start_Date.touched">Start
+                                Date is Reqired</span>
+                        </div> -->
+                        <div class="form-group">
+                              <p-calendar #start_Date="ngModel" [(ngModel)]="property.propertydto.start_date" name="startName" dateFormat="mm-dd-yy" placeholder="Start Date.." inputId="dateformat"></p-calendar>
+                              <span class="text-danger px-3" *ngIf="start_Date.errors?.required&&start_Date.touched">Start
+                                Date is Reqired</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h3 class="title">End Date</h3>
+                    <div class="datepicker-container">
+                        <!-- <div class="form-group">
+                            <input type="text" #end_Date="ngModel" name="endDate" [(ngModel)]="property.propertydto.end_date"
+                                 class="form-control date-picker"
+                                data-datepicker-color="primary" required>
+                            <span class="text-danger px-3" *ngIf="end_Date.errors?.required&&end_Date.touched">End Date
+                                is Reqired</span>
+                        </div> -->
+                        <div class="form-group">
+                              <p-calendar #end_Date="ngModel" [(ngModel)]="property.propertydto.end_date" name="endDate" dateFormat="mm-dd-yy" placeholder="End Date.." inputId="dateformat"></p-calendar>
+                              <span class="text-danger px-3" *ngIf="end_Date.errors?.required&&end_Date.touched">End Date
+                                is Reqired</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!-- Row -->
+
+            <div class="text-center col-md-12 col-lg-12">
+                <h1 class="title"><i class="now-ui-icons files_single-copy-04"></i> THAT'S EVERYTHING</h1>
+            </div>
+
+            <div class="text-center col-md-12 col-lg-12">
+                <button class="btn btn-primary btn-lg btn-round" role="button" type="submit" [disabled]="!form.valid" >
+                    Submit
+                </button>
+            </div>
+
+        </form>
+    </div>
+</section>
+
+
+
+<!-- <select class="my-class">
+    <option *ngFor="let item of check['parameters']['items']">
+       {{item}}
+    </option>
+   </select> -->
+
+<script>
+    $(document).ready(function () {
+        // the body of this function is in assets/js/styleinterface.js
+        nowuiKit.initSliders();
+    });
+
+    function scrollToDownload() {
+
+        if ($('.section-download').length != 0) {
+            $("html, body").animate({
+                scrollTop: $('.section-download').offset().top
+            }, 1000);
+        }
+    }
+</script>

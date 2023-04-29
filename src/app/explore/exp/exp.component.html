@@ -1,0 +1,256 @@
+
+
+<main>
+
+  <nav id="menu" class="main-menu"></nav>
+
+
+  <!-- /filters -->
+
+  <!-- End Map -->
+
+  <div class="container margin_60_35">
+
+    <div class="row my-5">
+
+      <aside class="col-lg-3">
+        <!-- <div class="custom-search-input-2 inner-2">
+          <div class="form-group">
+            <input class="form-control" type="text" placeholder="Terms...">
+            <i class="icon_search"></i>
+          </div>
+          <div class="form-group">
+            <input class="form-control" type="text" (keyup)="OnKey($event)" placeholder="Where">
+            <i class="icon_pin_alt"></i>
+          </div>
+          <div class="form-group">
+            <select class="wide">
+              <option>District</option>
+              <option>All</option>
+              <option>Alexandria</option>
+              <option>Berlin</option>
+              <option>London</option>
+            </select>
+          </div>
+          <input type="submit" class="btn_search" value="Search">
+        </div> -->
+
+
+
+
+
+        <section filter="condition" class="mb-4">
+          <h6 class="font-weight-bold mb-3">Type of Place</h6>
+           <div class="form-check pl-0 mb-3" *ngFor="let type of PropertyTypes">
+            <input type="checkbox" class="filter-option form-check-input filled-in" condition="newtype" (change)="OnPropertyTypeChecked($event)"  [value]="type.value" />
+            <label class="form-check-label small text-uppercase card-link-secondary" for="{{type.value}}">{{type.value}}</label>
+          </div>
+        </section>
+        <!-- Section: Place Type -->
+        <!-- Section: Price -->
+        <section class="mb-4" filter="price">
+          <h6 class="font-weight-bold mb-3">Price</h6>
+          <div class="form-check pl-0 mb-3" *ngFor="let price of Prices">
+            <!-- arrray.for() -->
+            <!-- change(e,100) -->
+            <!--  -->
+            <input [value]="price.value" (change)="onPriceChecked($event)" type="radio" class="filter-option form-check-input" id="{{price.description}}"
+              name="price" />
+            <label class="form-check-label small text-uppercase card-link-secondary" for="{{price.description}}">{{price.description}}</label>
+          </div>
+        </section>
+
+
+
+        <!-- Section: Price -->
+        <!-- Section: Property -->
+        <!-- <section filter="condition" class="mb-4">
+          <h6 class="font-weight-bold mb-3">Property Type</h6>
+
+          <div class="form-check pl-0 mb-3">
+            <input type="checkbox" class="filter-option form-check-input filled-in" condition="newproperty"
+              id="newproperty" />
+            <label class="form-check-label small text-uppercase card-link-secondary" for="newproperty">Single</label>
+          </div>
+          <div class="form-check pl-0 mb-3">
+            <input condition="usedproperty" type="checkbox" class="filter-option form-check-input filled-in"
+              id="usedproperty" />
+            <label class="form-check-label small text-uppercase card-link-secondary" for="usedproperty">Double</label>
+          </div>
+          <div class="form-check pl-0 mb-3">
+            <input condition="alreadycollectible" type="checkbox" class="filter-option form-check-input filled-in"
+              id="collectibleproperty" />
+            <label class="form-check-label small text-uppercase card-link-secondary"
+              for="collectibleproperty">Triple</label>
+          </div>
+          <div class="form-check pl-0 mb-3 pb-1">
+            <input condition="renewedproperty" type="checkbox" class="filter-option form-check-input filled-in"
+              id="renewedproperty" />
+            <label class="form-check-label small text-uppercase card-link-secondary" for="renewedproperty">Quad</label>
+          </div>
+          <div class="form-check pl-0 mb-3 pb-1">
+            <input condition="detectedproperty" type="checkbox" class="filter-option form-check-input filled-in"
+              id="detectedproperty" />
+            <label class="form-check-label small text-uppercase card-link-secondary"
+              for="detectedproperty">Queen</label>
+          </div>
+          <div class="form-check pl-0 mb-3 pb-1">
+            <input condition="remadeproperty" type="checkbox" class="filter-option form-check-input filled-in"
+              id="remadeproperty" />
+            <label class="form-check-label small text-uppercase card-link-secondary" for="remadeproperty">King</label>
+          </div>
+        </section> -->
+        <!-- Section: Property -->
+
+        <!-- Section: Guests -->
+        <!-- <section class="mb-4" filter="price">
+          <h6 class="font-weight-bold mb-3">Guests</h6>
+
+          <div class="form-check pl-0 mb-3">
+            <input price="1 Guest" type="radio" class="filter-option form-check-input" id="1 Guest"
+              name="materialExampleRadios" />
+            <label class="form-check-label small text-uppercase card-link-secondary" for="1 Guest">1 Guest</label>
+          </div>
+          <div class="form-check pl-0 mb-3">
+            <input price="2 Guests" type="radio" class="filter-option form-check-input" id="2 Guests"
+              name="materialExampleRadios" />
+            <label class="form-check-label small text-uppercase card-link-secondary" for="2 Guests">2 Guests</label>
+          </div>
+          <div class="form-check pl-0 mb-3">
+            <input price="3 Guests" type="radio" class="filter-option form-check-input" id="3 Guests"
+              name="materialExampleRadios" />
+            <label class="form-check-label small text-uppercase card-link-secondary" for="3 Guests">3 Guests</label>
+          </div>
+          <div class="form-check pl-0 mb-3">
+            <input price="4 Guests" type="radio" class="filter-option form-check-input" id="4 Guests"
+              name="materialExampleRadios" />
+            <label class="form-check-label small text-uppercase card-link-secondary" for="4 Guests">4 Guests</label>
+          </div>
+          <div class="form-check pl-0 mb-3">
+            <input price="5 Guests" type="radio" class="filter-option form-check-input" id="5 Guests"
+              name="materialExampleRadios" />
+            <label class="form-check-label small text-uppercase card-link-secondary" for="5 Guests">5 Guests</label>
+          </div>
+          <div class="form-check pl-0 mb-3">
+            <input price="6 Guests" type="radio" class="filter-option form-check-input" id="6 Guests"
+              name="materialExampleRadios" />
+            <label class="form-check-label small text-uppercase card-link-secondary" for="6 Guests">6 Guests</label>
+          </div>
+        </section> -->
+        <!-- Section: Guests -->
+      </aside>
+      <!-- /aside -->
+
+      <div class="col-lg-9">
+
+        <div class="wrapper-grid">
+          <div class="row">
+            <div class="col-xl-4 col-lg-6 col-md-6" *ngFor="let item of properties">
+              <div class="box_grid" [routerLink]="['/details',item.propertyDTo.id]">
+             <div>
+                <figure>
+                  <a href="#0" class="wish_bt liked"></a>
+                  <!-- <a ><img src="assets/img/cities/bridge_architecture_gothic.jpg"
+                      class="img-fluid" alt="" width="800" height="533"></a> -->
+                      
+                       <a> <img src="{{item.propertiesimages[0].image}}" 
+                        class="img-fluid" alt="" width="800" height="533"></a>  
+
+                  <div class="read_more"><span>Read more</span></div>
+                </figure>
+                </div>
+
+                <div class="wrapper">
+                  <h3><a href="tour-detail.html">{{item.propertyDTo.name}}</a></h3>
+                  <p>{{item.propertyDTo.cities}}</p>
+                  <span class="price">From <strong>${{item.propertyDTo.price}}</strong> /per person</span>
+                </div>
+                <!-- <ul>
+                  <li><i class="icon_clock_alt"></i> 1h 30min</li>
+                  <li> -->
+                    <!-- <div class="score"><span>Superb<em>
+                          Reviews</em></span><strong>{{item.property_reviews}}</strong></div> 
+                  </li>
+                </ul>
+              </div>
+            </div>
+           /box_grid -->
+<!-- </li>
+</ul> -->
+            <!-- /box_grid -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- /isotope-wrapper -->
+    <p class="text-center"><a href="#0" class="btn_1 rounded add_top_30">Load more</a></p>
+    <!-- <app-pager [totalCount]="this.TotalCount"[pageSize]="6" (pageChanged)="Pagechanged($event)"></app-pager>
+    <app-pager [totalCount]="12" [pageSize]="6" (pageChanged)="Pagechanged($event)"></app-pager> -->
+
+  </div>
+  <!-- /container -->
+  <div class="bg_color_1">
+    <div class="container margin_60_35">
+      <div class="row">
+        <div class="col-md-4">
+          <a href="#0" class="boxed_list">
+            <i class="pe-7s-help2"></i>
+            <h4>Need Help? Contact us</h4>
+            <p>Cum appareat maiestatis interpretaris et, et sit.</p>
+          </a>
+        </div>
+        <div class="col-md-4">
+          <a href="#0" class="boxed_list">
+            <i class="pe-7s-wallet"></i>
+            <h4>Payments</h4>
+            <p>Qui ea nemore eruditi, magna prima possit eu mei.</p>
+          </a>
+        </div>
+        <div class="col-md-4">
+          <a href="#0" class="boxed_list">
+            <i class="pe-7s-note2"></i>
+            <h4>Cancel Policy</h4>
+            <p>Hinc vituperata sed ut, pro laudem nonumes ex.</p>
+          </a>
+        </div>
+      </div>
+      </div>
+      <!-- /row -->
+    </div>
+    <!-- /container -->
+    </div>
+  </div>
+  <!-- /bg_color_1 -->
+
+   </main> 
+  <!--/main-->
+
+
+  <script>
+    $(window).load(function () {
+      var $container = $('.isotope-wrapper');
+      $container.isotope({ itemSelector: '.isotope-item', layoutMode: 'masonry' });
+    });
+
+    $('.filters_listing').on('click', 'input', 'change', function () {
+      var selector = $(this).attr('data-filter');
+      $('.isotope-wrapper').isotope({ filter: selector });
+    });
+  </script>
+
+  <!-- Range Slider -->
+  <script>
+    $("#range").ionRangeSlider({
+      hide_min_max: true,
+      keyboard: true,
+      min: 30,
+      max: 180,
+      from: 60,
+      to: 130,
+      type: 'double',
+      step: 1,
+      prefix: "Km ",
+      grid: false
+    });
+  </script>

@@ -1,0 +1,27 @@
+
+agm-map {
+  height: 300px;
+}
+.margin_60_35 {
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 58vh;
+}
+@media (max-width: 575px) {
+  .margin_60_35 {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+@media (max-width: 990px) {
+  .margin_60_35 {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+
+#description{
+  padding: 0;
+}
